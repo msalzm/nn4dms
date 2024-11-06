@@ -1,0 +1,14 @@
+--dataset_name
+1c0p
+--net_file
+network_specs/cnns/cnn-5xk17f128_pools3.yml
+--learning_rate
+0.0001
+--batch_size
+32
+--encoding
+one_hot,aa_index
+--log_dir_base
+output/training_logs/1c0p_cnn_pools3
+--split_dir
+data/1c0p/splits/standard_tr0.6_tu0.2_te0.2_wF_r12

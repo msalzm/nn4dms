@@ -574,7 +574,8 @@ def main(args):
         data["idxs"][set_name] = idxs
         data["variants"][set_name] = ds.iloc[idxs]["variant"].tolist()
         # we are using "score" as the default target, but support for multiple scores could be added here
-        data["scores"][set_name] = ds.iloc[idxs]["score"].to_numpy()
+        # I defined the normalized score to be used instead of the unnormalized.
+        data["scores"][set_name] = ds.iloc[idxs]["score_wt_norm"].to_numpy()
         # encode the data
         logger.info("encoding {} set variants using {} encoding".format(set_name, args.encoding))
         data["encoded_data"][set_name] = enc.encode(encoding=args.encoding, variants=data["variants"][set_name],
